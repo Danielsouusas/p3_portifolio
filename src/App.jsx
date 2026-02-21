@@ -127,8 +127,23 @@ function App() {
         );
 
       case 'system':
+
         const systemOptions = [
-          { icon: <FaFileDownload />, label: 'SAVE DATA', sub: 'Download Resume', action: () => { playClickSound(); window.open('/curriculo_lucas_melare_2026.pdf', '_blank'); } },
+          {
+            icon: <FaFileDownload />,
+            label: 'SAVE DATA',
+            sub: 'Download Resume',
+            action: () => {
+              playClickSound();
+              const link = document.createElement('a');
+              link.href = '/curriculo_lucas_melare_2026.pdf';
+              link.target = '_blank';
+              link.download = 'curriculo_lucas_melare_2026.pdf';
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }
+          },
           { icon: <FaLinkedin />, label: 'NETWORK', sub: 'LinkedIn', action: () => { playClickSound(); window.open('https://www.linkedin.com/in/lucasmelare/', '_blank'); } },
           { icon: <FaGithub />, label: 'SOURCE', sub: 'GitHub', action: () => { playClickSound(); window.open('https://github.com/melanolachef', '_blank'); } },
           { icon: <FaEnvelope />, label: 'COMMS', sub: 'E-mail', action: () => { playClickSound(); window.location.href = 'mailto:lnmelare@gmail.com'; } }
