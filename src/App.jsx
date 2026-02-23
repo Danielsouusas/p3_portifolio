@@ -60,19 +60,19 @@ function App() {
             <div>
               {/* NOME ALTERADO AQUI */}
               <h3 style={{ fontSize: isMobile ? '2rem' : '3rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000' }}>DANIEL S DE OLIVEIRA</h3>
-              <div style={{ color: '#A0D2EB', fontSize: isMobile ? '1rem' : '1.2rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '-5px' }}>Class: Back-end Developer & Data Analyst</div>
+              <div style={{ color: '#A0D2EB', fontSize: isMobile ? '1rem' : '1.2rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '-5px' }}>Class: FRONT-END | Aplicações Web e Mobile | JavaScript | React Developer & Data Analyst</div>
             </div>
             <div style={{ backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderLeft: '4px solid #00BFFF' }}>
-              <p style={{ fontSize: isMobile ? '1rem' : '1.2rem', lineHeight: '1.6' }}>Focado em unir a robustez da engenharia de software com a inteligência de dados. Atualmente liderando automações de documentos e criando dashboards interativos.</p>
+              <p style={{ fontSize: isMobile ? '1rem' : '1.2rem', lineHeight: '1.6' }}>Focado em unir a robustez da engenharia de software com a inteligência Artificial, Automações de documentos e criando dashboards interativos.</p>
             </div>
             <div>
               <h4 style={{ color: '#00BFFF', fontSize: isMobile ? '1.2rem' : '1.5rem', borderBottom: '1px solid rgba(0, 191, 255, 0.3)', paddingBottom: '5px', marginBottom: '10px' }}>CURRENT GUILD</h4>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><span style={{ fontSize: isMobile ? '1.1rem' : '1.3rem', fontWeight: 'bold' }}>Rei dos Motores</span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>Abr 2025 - Atual</span></div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><span style={{ fontSize: isMobile ? '1.1rem' : '1.3rem', fontWeight: 'bold' }}>gdtech</span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>Abr 2025 - Atual</span></div>
               <p style={{ fontSize: '1rem', color: '#CCC', marginTop: '5px' }}> DEV</p>
             </div>
             <div>
               <h4 style={{ color: '#00BFFF', fontSize: isMobile ? '1.2rem' : '1.5rem', borderBottom: '1px solid rgba(0, 191, 255, 0.3)', paddingBottom: '5px', marginBottom: '10px' }}>ACADEMICS</h4>
-              <div style={{ marginBottom: '15px' }}><div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}><span style={{ fontSize: isMobile ? '1rem' : '1.2rem' }}>Pós-graduação em Data Analytics</span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>FIAP</span></div></div>
+              <div style={{ marginBottom: '15px' }}><div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}><span style={{ fontSize: isMobile ? '1rem' : '1.2rem' }}></span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>FIAP</span></div></div>
               <div><div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}><span style={{ fontSize: isMobile ? '1rem' : '1.2rem' }}>Análise e Desenvolvimento de Sistemas</span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>FACENS</span></div></div>
             </div>
           </div>
@@ -105,10 +105,10 @@ function App() {
 
       case 'quests':
         const questsList = [
-          { title: 'ITAM System', client: 'Rei dos Motores', status: 'IN PROGRESS', techs: 'SaaS • Dashboards', desc: 'Sistema de Gestão de Ativos de TI para controle financeiro, histórico de manutenção, licenciamento de softwares e controle de linhas telefônicas.' },
+          { title: 'GDTECH', client: 'Rei dos Motores', status: 'IN PROGRESS', techs: 'SaaS • Dashboards', desc: 'Sistema de Gestão de Ativos de TI para controle financeiro, histórico de manutenção, licenciamento de softwares e controle de linhas telefônicas.' },
           { title: 'Data Dashboards', client: 'Rei dos Motores', status: 'CLEARED', techs: 'Power BI • Forms', desc: 'Automatização de documentos corporativos e criação de dashboards em tempo real para tomada de decisão estratégica.' },
-          { title: 'Dental Clinic App', client: 'Freelance', status: 'CLEARED', techs: 'Scripts • Integração', desc: 'Desenvolvimento de sistema automático de lembretes e agendamentos, reduzindo faltas e eliminando duplicidades.' },
-          { title: 'Mentor Novices', client: 'FACENS', status: 'CLEARED', techs: 'Java • Algorithms', desc: 'Suporte prático para alunos na implementação de algoritmos complexos (Árvores, Grafos).' }
+          { title: 'GDTECH', client: 'Freelance', status: 'CLEARED', techs: 'Scripts • Integração', desc: 'Desenvolvimento de sistema automático de lembretes e agendamentos, reduzindo faltas e eliminando duplicidades.' },
+          { title: 'CHAVEIRO Deuclecio', client: 'FACENS', status: 'CLEARED', techs: 'Java • Algorithms', desc: 'Smart_GDTECH: Inteligência Estrategia Aplicada as suas Finanças().' }
         ];
         return (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', overflowY: 'auto', paddingRight: isMobile ? '5px' : '15px', height: '100%' }}>
