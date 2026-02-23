@@ -23,8 +23,6 @@ function App() {
   const [gameStarted, setGameStarted] = useState(false);
   const [hoveredItem, setHoveredItem] = useState(null);
   const [activeSection, setActiveSection] = useState(null);
-
-  // --- SENSOR DE TELA (RESPONSIVIDADE) ---
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -33,9 +31,8 @@ function App() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const isMobile = windowWidth < 768; // Se a tela for menor que 768px, é celular!
+  const isMobile = windowWidth < 768;
 
-  // --- SISTEMA DE ÁUDIO ---
   const playHoverSound = () => {
     const audio = new Audio('/hover.mp3');
     audio.volume = 0.3;
@@ -55,14 +52,14 @@ function App() {
     }
   };
 
-  // --- RENDERIZAÇÃO DO CONTEÚDO DAS ABAS ---
   const renderContent = () => {
     switch (activeSection) {
       case 'status':
         return (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', overflowY: 'auto', paddingRight: isMobile ? '5px' : '15px', height: '100%' }}>
             <div>
-              <h3 style={{ fontSize: isMobile ? '2rem' : '3rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000' }}>LUCAS N. MELARÉ COELHO</h3>
+              {/* NOME ALTERADO AQUI */}
+              <h3 style={{ fontSize: isMobile ? '2rem' : '3rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000' }}>DANIEL S DE OLIVEIRA</h3>
               <div style={{ color: '#A0D2EB', fontSize: isMobile ? '1rem' : '1.2rem', textTransform: 'uppercase', letterSpacing: '1px', marginTop: '-5px' }}>Class: Back-end Developer & Data Analyst</div>
             </div>
             <div style={{ backgroundColor: 'rgba(0,0,0,0.3)', padding: '15px', borderLeft: '4px solid #00BFFF' }}>
@@ -71,7 +68,7 @@ function App() {
             <div>
               <h4 style={{ color: '#00BFFF', fontSize: isMobile ? '1.2rem' : '1.5rem', borderBottom: '1px solid rgba(0, 191, 255, 0.3)', paddingBottom: '5px', marginBottom: '10px' }}>CURRENT GUILD</h4>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}><span style={{ fontSize: isMobile ? '1.1rem' : '1.3rem', fontWeight: 'bold' }}>Rei dos Motores</span><span style={{ color: '#A0D2EB', fontSize: '0.9rem' }}>Abr 2025 - Atual</span></div>
-              <p style={{ fontSize: '1rem', color: '#CCC', marginTop: '5px' }}>Estagiário de Desenvolvimento</p>
+              <p style={{ fontSize: '1rem', color: '#CCC', marginTop: '5px' }}> DEV</p>
             </div>
             <div>
               <h4 style={{ color: '#00BFFF', fontSize: isMobile ? '1.2rem' : '1.5rem', borderBottom: '1px solid rgba(0, 191, 255, 0.3)', paddingBottom: '5px', marginBottom: '10px' }}>ACADEMICS</h4>
@@ -84,19 +81,22 @@ function App() {
       case 'skills':
         const skillsParty = [
           { name: 'JAVA / SPRING', level: 'Lv 45', hp: '85%', sp: '70%' },
-          { name: 'SQL / DB', level: 'Lv 40', hp: '90%', sp: '80%' },
-          { name: 'POWER BI', level: 'Lv 38', hp: '80%', sp: '85%' },
-          { name: 'DATA STRUCTURES', level: 'Lv 35', hp: '75%', sp: '60%' }
+          { name: 'JAVASCRIPT', level: 'Lv 40', hp: '80%', sp: '80%' },
+          { name: 'PYTHON', level: 'Lv 42', hp: '80%', sp: '75%' },
+          { name: 'BANCO DE DADOS', level: 'Lv 40', hp: '90%', sp: '80%' },
+          { name: 'APIs REST', level: 'Lv 38', hp: '85%', sp: '85%' },
+          { name: 'REACT', level: 'Lv 35', hp: '70%', sp: '90%' },
+          { name: 'HTML5 / CSS3', level: 'Lv 30', hp: '95%', sp: '40%' }
         ];
         return (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '25px', alignItems: 'flex-start', paddingLeft: isMobile ? '0' : '20px', overflowY: 'auto', height: '100%', paddingRight: isMobile ? '5px' : '15px' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '20px', alignItems: 'flex-start', paddingLeft: isMobile ? '0' : '20px', overflowY: 'auto', height: '100%', paddingRight: isMobile ? '5px' : '15px' }}>
             {skillsParty.map((skill, index) => (
-              <motion.div key={index} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.15 }} style={{ display: 'flex', alignItems: 'center', gap: '15px', backgroundColor: 'rgba(5, 10, 31, 0.9)', border: '2px solid #00BFFF', padding: isMobile ? '10px' : '10px 20px', transform: 'skewX(-10deg)', boxShadow: '4px 4px 0px rgba(0,0,0,0.5)', width: '100%', minWidth: isMobile ? '0' : '400px' }}>
+              <motion.div key={index} initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }} style={{ display: 'flex', alignItems: 'center', gap: '15px', backgroundColor: 'rgba(5, 10, 31, 0.9)', border: '2px solid #00BFFF', padding: isMobile ? '8px' : '10px 20px', transform: 'skewX(-10deg)', boxShadow: '4px 4px 0px rgba(0,0,0,0.5)', width: '100%', minWidth: isMobile ? '0' : '400px' }}>
                 <div style={{ width: isMobile ? '40px' : '50px', height: isMobile ? '40px' : '50px', backgroundColor: '#00BFFF', borderRadius: '5px', display: 'flex', justifyContent: 'center', alignItems: 'center', transform: 'skewX(10deg)' }}><span style={{ color: '#050A1F', fontWeight: 'bold' }}>{skill.name.charAt(0)}</span></div>
                 <div style={{ flex: 1, transform: 'skewX(10deg)' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}><span style={{ fontWeight: 'bold', fontSize: isMobile ? '1rem' : '1.2rem', textShadow: '1px 1px 0px #000' }}>{skill.name}</span><span style={{ color: '#A0D2EB', fontSize: isMobile ? '0.8rem' : '1rem' }}>{skill.level}</span></div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '3px' }}><span style={{ fontSize: '0.7rem', color: '#B2FF59', width: '20px' }}>HP</span><div style={{ height: '6px', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid #333' }}><div style={{ width: skill.hp, height: '100%', backgroundColor: '#B2FF59', boxShadow: '0 0 5px #B2FF59' }}></div></div></div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><span style={{ fontSize: '0.7rem', color: '#00BFFF', width: '20px' }}>SP</span><div style={{ height: '6px', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid #333' }}><div style={{ width: skill.sp, height: '100%', backgroundColor: '#00BFFF', boxShadow: '0 0 5px #00BFFF' }}></div></div></div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '5px' }}><span style={{ fontWeight: 'bold', fontSize: isMobile ? '0.9rem' : '1.1rem', textShadow: '1px 1px 0px #000' }}>{skill.name}</span><span style={{ color: '#A0D2EB', fontSize: '0.8rem' }}>{skill.level}</span></div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px', marginBottom: '3px' }}><span style={{ fontSize: '0.6rem', color: '#B2FF59', width: '20px' }}>HP</span><div style={{ height: '5px', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid #333' }}><div style={{ width: skill.hp, height: '100%', backgroundColor: '#B2FF59', boxShadow: '0 0 5px #B2FF59' }}></div></div></div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><span style={{ fontSize: '0.6rem', color: '#00BFFF', width: '20px' }}>SP</span><div style={{ height: '5px', flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', border: '1px solid #333' }}><div style={{ width: skill.sp, height: '100%', backgroundColor: '#00BFFF', boxShadow: '0 0 5px #00BFFF' }}></div></div></div>
                 </div>
               </motion.div>
             ))}
@@ -127,7 +127,6 @@ function App() {
         );
 
       case 'system':
-
         const systemOptions = [
           {
             icon: <FaFileDownload />,
@@ -136,17 +135,17 @@ function App() {
             action: () => {
               playClickSound();
               const link = document.createElement('a');
-              link.href = '/curriculo_lucas_melare_2026.pdf';
+              link.href = '/curriculo_Daniel_SOUSA_2026.pdf';
               link.target = '_blank';
-              link.download = 'curriculo_lucas_melare_2026.pdf';
+              link.download = 'curriculo_Daniel_SOUSA_2026.pdf';
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
             }
           },
-          { icon: <FaLinkedin />, label: 'NETWORK', sub: 'LinkedIn', action: () => { playClickSound(); window.open('https://www.linkedin.com/in/lucasmelare/', '_blank'); } },
-          { icon: <FaGithub />, label: 'SOURCE', sub: 'GitHub', action: () => { playClickSound(); window.open('https://github.com/melanolachef', '_blank'); } },
-          { icon: <FaEnvelope />, label: 'COMMS', sub: 'E-mail', action: () => { playClickSound(); window.location.href = 'mailto:lnmelare@gmail.com'; } }
+          { icon: <FaLinkedin />, label: 'NETWORK', sub: 'LinkedIn', action: () => { playClickSound(); window.open('https://www.linkedin.com/in/daniel-sousa-842964393/', '_blank'); } },
+          { icon: <FaGithub />, label: 'SOURCE', sub: 'GitHub', action: () => { playClickSound(); window.open('https://github.com/Danielsouusas', '_blank'); } },
+          { icon: <FaEnvelope />, label: 'COMMS', sub: 'E-mail', action: () => { playClickSound(); window.location.href = 'mailto:gdsousa3@gmail.com'; } }
         ];
         return (
           <div style={{ display: 'flex', flexDirection: 'column', gap: isMobile ? '15px' : '20px', padding: '10px', height: '100%', justifyContent: 'center' }}>
@@ -167,8 +166,6 @@ function App() {
 
   return (
     <div style={{ height: '100vh', position: 'relative', overflow: 'hidden', display: 'flex', backgroundColor: '#050A1F' }} onClick={startGame}>
-
-      {/* LUA - Menor no celular para não atrapalhar a leitura */}
       {gameStarted && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.8 }} transition={{ duration: 2 }} style={{ position: 'absolute', top: '10%', right: isMobile ? '-10%' : '15%', width: isMobile ? '200px' : '350px', height: isMobile ? '200px' : '350px', borderRadius: '50%', backgroundColor: '#E0F7FA', boxShadow: '0 0 80px 20px rgba(0, 191, 255, 0.2), inset -30px -30px 50px rgba(0,0,0,0.3)', zIndex: 1, pointerEvents: 'none', filter: 'blur(2px)' }} />
       )}
@@ -182,18 +179,16 @@ function App() {
               backgroundImage: "url('/title-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', boxShadow: 'inset 0 0 0 2000px rgba(5, 10, 31, 0.3)'
             }}
           >
-            {/* Fontes reduzidas na Title Screen para o celular */}
-            <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ fontSize: isMobile ? '3.5rem' : '5.5rem', letterSpacing: '4px', color: '#00BFFF', textShadow: '4px 4px 0px #000', textTransform: 'uppercase', textAlign: 'center' }}>LUCAS</motion.h1>
+            {/* TELA DE INÍCIO ALTERADA PARA DANIEL */}
+            <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ fontSize: isMobile ? '3.5rem' : '5.5rem', letterSpacing: '4px', color: '#00BFFF', textShadow: '4px 4px 0px #000', textTransform: 'uppercase', textAlign: 'center' }}>DANIEL</motion.h1>
             <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} style={{ fontSize: isMobile ? '1.2rem' : '1.8rem', letterSpacing: '4px', marginTop: '10px', color: '#FFF', textShadow: '2px 2px 0px #000', textTransform: 'uppercase' }}>PORTFOLIO</motion.h2>
             <motion.div animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }} style={{ position: 'absolute', bottom: '10%', fontSize: isMobile ? '1rem' : '1.4rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000', backgroundColor: 'rgba(0,0,0,0.5)', padding: '10px 20px', borderRadius: '5px' }}>PRESS TO START</motion.div>
           </motion.div>
         ) : (
           <motion.div
             key="main-layout" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}
-            // Layout muda de linha (lado a lado) para coluna no celular
             style={{ height: '100%', width: '100%', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', position: 'relative', zIndex: 2 }}
           >
-            {/* O MENU - Se estiver no celular e alguma seção foi clicada, esconde o menu */}
             {(!isMobile || !activeSection) && (
               <div style={{ flex: 1, paddingLeft: isMobile ? '20px' : '8%', paddingTop: isMobile ? '60px' : '0', width: '100%' }}>
                 <motion.ul variants={menuContainer} initial="hidden" animate="show" style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: isMobile ? '15px' : '20px' }}>
@@ -201,7 +196,6 @@ function App() {
                     <motion.li
                       key={item.id} variants={menuItemAnim} onMouseEnter={() => { setHoveredItem(item.id); if (!isMobile) playHoverSound(); }} onMouseLeave={() => setHoveredItem(null)} onClick={() => { setActiveSection(item.id); playClickSound(); }}
                       style={{
-                        // Fontes do menu menores no celular
                         fontSize: isMobile ? '2.5rem' : '4rem', color: hoveredItem === item.id || activeSection === item.id ? '#050A1F' : '#FFFFFF', backgroundColor: hoveredItem === item.id || activeSection === item.id ? '#00BFFF' : 'transparent',
                         padding: isMobile ? '5px 20px' : '5px 40px', cursor: 'pointer', textTransform: 'uppercase', textShadow: hoveredItem === item.id || activeSection === item.id ? 'none' : '4px 4px 0px #000',
                         borderLeft: hoveredItem === item.id || activeSection === item.id ? '10px solid #FFFFFF' : '10px solid transparent', transition: 'all 0.1s ease-out', width: 'fit-content'
@@ -214,7 +208,6 @@ function App() {
               </div>
             )}
 
-            {/* O CONTEÚDO */}
             {activeSection && (
               <div style={{ flex: isMobile ? 1 : 1.5, height: isMobile ? '100%' : '80%', padding: isMobile ? '20px' : '0 5% 0 0', width: '100%', position: 'relative' }}>
                 <AnimatePresence mode="wait">
@@ -222,8 +215,6 @@ function App() {
                     key={activeSection} initial={{ opacity: 0, x: 50, skewX: -5 }} animate={{ opacity: 1, x: 0, skewX: 0 }} exit={{ opacity: 0, x: 20, transition: { duration: 0.2 } }} transition={{ type: "spring", stiffness: 100, damping: 15 }}
                     style={{ backgroundColor: 'rgba(5, 10, 31, 0.85)', border: '2px solid #00BFFF', height: '100%', padding: isMobile ? '20px' : '40px', borderRadius: '10px', boxShadow: '0 0 30px rgba(0, 191, 255, 0.15)', backdropFilter: 'blur(10px)', display: 'flex', flexDirection: 'column' }}
                   >
-
-                    {/* Botão de VOLTAR, exclusivo para celular */}
                     {isMobile && (
                       <button
                         onClick={() => { playClickSound(); setActiveSection(null); }}
@@ -232,7 +223,6 @@ function App() {
                         ◄ BACK TO MENU
                       </button>
                     )}
-
                     <h2 style={{ fontSize: isMobile ? '2rem' : '3rem', color: '#00BFFF', textTransform: 'uppercase', borderBottom: '2px solid #00BFFF', paddingBottom: '10px', marginBottom: '20px', textShadow: '2px 2px 0px #000' }}>
                       {activeSection}
                     </h2>
