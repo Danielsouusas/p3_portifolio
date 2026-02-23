@@ -172,11 +172,11 @@ function App() {
 
       <AnimatePresence>
         {!gameStarted ? (
-          <motion.div
+         <motion.div
             key="title-screen" initial={{ opacity: 1 }} exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }} transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
               height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'absolute', width: '100%', cursor: 'pointer', zIndex: 10,
-              backgroundImage: "url('/title-bg.jpg')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', boxShadow: 'inset 0 0 0 2000px rgba(5, 10, 31, 0.3)'
+              backgroundImage: "url('https://whvn.cc/4xyjyz')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', boxShadow: 'inset 0 0 0 2000px rgba(5, 10, 31, 0.3)'
             }}
           >
             {/* TELA DE INÍCIO ALTERADA PARA DANIEL */}
