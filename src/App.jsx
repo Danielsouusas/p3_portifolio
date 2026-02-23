@@ -171,20 +171,37 @@ function App() {
       )}
 
       <AnimatePresence>
-        {!gameStarted ? (
-         <motion.div
-            key="title-screen" initial={{ opacity: 1 }} exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }} transition={{ duration: 0.8, ease: "easeInOut" }}
-            style={{
-              height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', position: 'absolute', width: '100%', cursor: 'pointer', zIndex: 10,
-              backgroundImage: "url('https://whvn.cc/4xyjyz')", backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', boxShadow: 'inset 0 0 0 2000px rgba(5, 10, 31, 0.3)'
-            }}
-          >
-            {/* TELA DE INÍCIO ALTERADA PARA DANIEL */}
-            <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ fontSize: isMobile ? '3.5rem' : '5.5rem', letterSpacing: '4px', color: '#00BFFF', textShadow: '4px 4px 0px #000', textTransform: 'uppercase', textAlign: 'center' }}>DANIEL</motion.h1>
-            <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} style={{ fontSize: isMobile ? '1.2rem' : '1.8rem', letterSpacing: '4px', marginTop: '10px', color: '#FFF', textShadow: '2px 2px 0px #000', textTransform: 'uppercase' }}>PORTFOLIO</motion.h2>
-            <motion.div animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }} style={{ position: 'absolute', bottom: '10%', fontSize: isMobile ? '1rem' : '1.4rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000', backgroundColor: 'rgba(0,0,0,0.5)', padding: '10px 20px', borderRadius: '5px' }}>PRESS TO START</motion.div>
-          </motion.div>
-        ) : (
+  {!gameStarted ? (
+    <motion.div
+      key="title-screen" 
+      initial={{ opacity: 1 }} 
+      exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }} 
+      transition={{ duration: 0.8, ease: "easeInOut" }}
+      style={{
+        height: '100%', 
+        display: 'flex', 
+        flexDirection: 'column', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        position: 'absolute', 
+        width: '100%', 
+        cursor: 'pointer', 
+        zIndex: 10,
+        // LINK DIRETO DA IMAGEM ABAIXO
+        backgroundImage: "url('https://w.wallhaven.cc/full/4x/wallhaven-4xyjyz.jpg')", 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat', 
+        boxShadow: 'inset 0 0 0 2000px rgba(5, 10, 31, 0.3)'
+      }}
+      onClick={() => { setGameStarted(true); playClickSound(); }}
+    >
+      {/* TELA DE INÍCIO DANIEL */}
+      <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} style={{ fontSize: isMobile ? '3.5rem' : '5.5rem', letterSpacing: '4px', color: '#00BFFF', textShadow: '4px 4px 0px #000', textTransform: 'uppercase', textAlign: 'center' }}>DANIEL</motion.h1>
+      <motion.h2 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 1 }} style={{ fontSize: isMobile ? '1.2rem' : '1.8rem', letterSpacing: '4px', marginTop: '10px', color: '#FFF', textShadow: '2px 2px 0px #000', textTransform: 'uppercase' }}>PORTFOLIO</motion.h2>
+      <motion.div animate={{ opacity: [1, 0, 1] }} transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }} style={{ position: 'absolute', bottom: '10%', fontSize: isMobile ? '1rem' : '1.4rem', color: '#FFFFFF', textShadow: '2px 2px 0px #000', backgroundColor: 'rgba(0,0,0,0.5)', padding: '10px 20px', borderRadius: '5px' }}>PRESS TO START</motion.div>
+    </motion.div>
+  ) : (
           <motion.div
             key="main-layout" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8 }}
             style={{ height: '100%', width: '100%', display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'flex-start' : 'center', position: 'relative', zIndex: 2 }}
